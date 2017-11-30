@@ -7,5 +7,3 @@ author_api_blueprint = manager.create_api_blueprint(Author,
 
 book_api_blueprint = manager.create_api_blueprint (Book,
     methods = ['GET', 'PATCH' , 'POST' , 'DELETE'])
-
-    
