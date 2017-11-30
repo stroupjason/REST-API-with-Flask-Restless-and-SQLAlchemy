@@ -1,7 +1,6 @@
 import flask
 import flask_restless
-from sqlalchemy.ext.declarative import declarative_base,
-delcared_attr
+from sqlalchemy.ext.declarative import declarative_base, declared_attr
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import *
 
@@ -14,16 +13,17 @@ autoflush=False)
 s = scoped_session(Session)
 
 Base = declarative_base()
-Base.metadata.bind = create_engine
-
+Base.metadata.bind = engine
 #Import all models to add them to Base.metadata
-from models import Book, author
+
+from .models import Book, Author
 
 Base.metadata.create_all()
 
 manager = flask_restless.APIManager(app, session=s)
 
 #Register flask-restless blueprints to instantiate CRUD endpoints
-from controllers import book_api_blueprint, author_api_blueprint
+from .controllers import book_api_blueprint, author_api_blueprint
+
 app.register_blueprint(author_api_blueprint)
 app.register_blueprint(book_api_blueprint)
