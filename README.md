@@ -1,4 +1,7 @@
+
 # REST API WITH FLASK-RESTLESS AND sqlalchemy
+
+
 
 ## Summary
 * This is a simple CRUD APP project that shows how to auto-generate a REST API from a handful of SQLalchemy models. This means full CRUD (POST, GET, PUT, DELETE) endpoint generation for each SQLalchemy model defined.
@@ -15,7 +18,9 @@
 
     #virtualenv env; latest version of Python and pip
 
+
     source env/bin/activate
 
 3. Install flask_restless and sqlalchemy
+
     * pip install flask-restless sqlalchemy
